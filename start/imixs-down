@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ $# -eq 1 ] && [ "$1" = '-p' ]; then
+    podman volume rm imixs_dbdata
+fi
+podman stop imixs_imixs-db_1
+podman stop imixs_imixs-app_1
+podman rm imixs_imixs-db_1
+podman rm imixs_imixs-app_1

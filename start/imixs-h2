@@ -1,0 +1,2 @@
+#!/bin/bash
+podman run -it --rm --name=imixs-app-h2 --label io.podman.compose.config-hash=123 --label io.podman.compose.project=imixs --label io.podman.compose.version=0.0.1 --label com.docker.compose.container-number=1 --label com.docker.compose.service=imixs-app --network host -e DATABASE_PROVIDER=h2 -e JWT_SECRET=my-secure-secret -e JWT_EXPIRE=3600 -e MP_OPENAPI_SERVERS=http://localhost:8080 --add-host imixs-app-h2:127.0.0.1 -p 8080:8080 imixs/imixs-microservice
